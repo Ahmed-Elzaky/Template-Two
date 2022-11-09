@@ -127,10 +127,20 @@ ul {
 /* Start Header */
 
 header {
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100%;
   z-index: 5;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+header.header-scroll {
+background-color: var(--transparent-color);
+padding: 0;
 }
 
 header .container {
@@ -194,7 +204,7 @@ header nav ul {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  header nav ul li a {
+  header nav ul li {
     padding: 5px !important;
   }
 
@@ -203,18 +213,18 @@ header nav ul {
   }
 }
 
-header nav ul li a {
+header nav ul li{
   display: block;
   font-size: 14px;
   color: white;
-  text-decoration: none;
   padding: 40px 10px;
   position: relative;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-header nav ul li.active a,
-header nav ul li:hover a {
+header nav ul li.active,
+header nav ul li:hover{
   color: var(--main-color);
   border-bottom: 1px solid var(--main-color);
   z-index: 5;
@@ -500,24 +510,24 @@ header nav .form i {
   flex-wrap: wrap;
 }
 
-.portfolio .cards .card {
+.portfolio .cards > div {
   flex-basis: 100%;
   position: relative;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .portfolio .cards .card {
+  .portfolio .cards > div {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1199px) {
-  .portfolio .cards .card {
+  .portfolio .cards > div {
     flex-basis: 25%;
   }
 }
 
-.portfolio .cards .card .image img {
+.portfolio .cards > div .image img {
   max-width: 100%;
   display: block;
   transition: 0.3s;
@@ -535,7 +545,7 @@ header nav .form i {
   -o-transform: rotate(3deg) scale(1.1);
 }
 
-.portfolio .cards .card .text {
+.portfolio .cards > div .text {
   width: 100%;
   background-color: #fff;
   font-weight: normal;
@@ -554,7 +564,7 @@ header nav .form i {
   bottom: 0;
 }
 
-.portfolio .cards .card .text span {
+.portfolio .cards > div .text span {
   color: var(--main-color);
 }
 
