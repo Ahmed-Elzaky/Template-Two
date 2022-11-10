@@ -41,3 +41,16 @@ $('.portfolio ul li').click(function () {
   $('.cards > div').hide();
   $('.' + $(this).data('class')).fadeIn();
 })
+
+
+// progress animation
+let progressSpans = document.querySelectorAll('.prog span');
+let section = document.querySelector('.our-skills');
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop + 200) {
+    progressSpans.forEach((span) => {
+      span.style.width = span.dataset.progress;
+    })
+  }
+}
