@@ -576,6 +576,7 @@ header nav .form i {
   text-decoration: none;
   display: block;
   margin: 30px auto;
+  width: fit-content;
   text-transform: uppercase;
 }
 
